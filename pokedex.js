@@ -20,7 +20,8 @@ buttonSearch.addEventListener('click', async () => {
   let pokemonName = document.createElement('p');
   let pokemonDetails = document.createElement('ul');
   let pokemonImg = document.createElement('img');
-  pokemonName.innerHTML = poke.name;
+
+  pokemonName.innerHTML = `Name: ${poke.name}`;
   for (let i = 0; i < poke.abilities.length; i++) { // looping through abilities length
     let pokemonAbilities = document.createElement('li'); // creating one 'li' per ability
     pokemonAbilities.innerHTML = poke.abilities[i].ability.name; // creating the li with the name of the ability
@@ -32,6 +33,7 @@ buttonSearch.addEventListener('click', async () => {
   pokemonItem.appendChild(pokemonImg);
   pokemonItem.appendChild(pokemonName);
   pokemonItem.appendChild(pokemonDetails);
+
 
   pokemonSearched.appendChild(pokemonItem);
   console.log(pokemonSearched);
@@ -55,7 +57,7 @@ randomSearch.addEventListener('click', async () => {
   let pokemonName = document.createElement('p');
   let pokemonDetails = document.createElement('ul');
   let pokemonImg = document.createElement('img');
-  pokemonName.innerHTML = ranPoke.name;
+  pokemonName.innerHTML = `Name: ${ranPoke.name}`;
   for (let i = 0; i < ranPoke.abilities.length; i++) {
     let pokemonAbilities = document.createElement('li');
     pokemonAbilities.innerHTML = ranPoke.abilities[i].ability.name;
