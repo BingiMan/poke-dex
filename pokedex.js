@@ -22,7 +22,7 @@ buttonSearch.addEventListener('click', async () => {
   let pokemonDetails = document.createElement('li');
   let pokemonImg = document.createElement('img');
   pokemonName.innerHTML = poke.name;
-  pokemonDetails.innerHTML = poke.abilities.ability;
+  pokemonDetails.innerHTML = poke.abilities.forEach;
 
 
   pokemonImg.setAttribute('src', poke.sprites.front_default);
