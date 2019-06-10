@@ -22,8 +22,11 @@ buttonSearch.addEventListener('click', async () => {
   let pokemonDetails = document.createElement('li');
   let pokemonImg = document.createElement('img');
   pokemonName.innerHTML = poke.name;
-  pokemonDetails.innerHTML = poke.abilities.forEach;
-
+  if (typeof poke.abilities === Array) {
+    for (let ability of poke.abilities) {
+      pokemonDetails.innerHTML = ability;
+    }
+  };
 
   pokemonImg.setAttribute('src', poke.sprites.front_default);
   pokemonImg.setAttribute('alt', poke.name);
