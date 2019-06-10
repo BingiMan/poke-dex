@@ -16,17 +16,22 @@ buttonSearch.addEventListener('click', async () => {
 
   const pokemonSearched = document.querySelector('#pokemon-list')
   pokemonSearched.innerHTML = '';
-
   let pokemonItem = document.createElement('div');
   let pokemonName = document.createElement('p');
-  let pokemonDetails = document.createElement('li');
+  let pokemonDetails = document.createElement('ul');
   let pokemonImg = document.createElement('img');
   pokemonName.innerHTML = poke.name;
-  if (typeof poke.abilities === Array) {
-    for (let ability of poke.abilities) {
-      pokemonDetails.innerHTML = ability;
-    }
-  };
+  for (let i = 0; i < poke.abilities.length; i++) {
+    let pokemonAbilities = document.createElement('li');
+    pokemonAbilities.innerHTML = poke.abilities[i].ability.name;
+    pokemonDetails.appendChild(pokemonAbilities);
+  }
+
+  // if (typeof poke.abilities === Array) {
+  //   for (let ability of poke.abilities) {
+  //     pokemonDetails.innerHTML = ability;
+  //   }
+  // };
 
   pokemonImg.setAttribute('src', poke.sprites.front_default);
   pokemonImg.setAttribute('alt', poke.name);
