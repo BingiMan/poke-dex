@@ -7,8 +7,8 @@ PROJECT NUMBER 1
 POKEDEX 
 --------------------------------
 
-This website will be a pokedex , where you can look up for any pokemon that you want to know about it.
-This you going to be able with a fully functional web.
+This website will be a pokedex , where you can look up for any pokemon that you want to know about.
+When the website is complete we should be able to: 
 * Navegation // a functional navegation bar
 * Search button //  you can look up for the pokemon that you want
 * Random search //  get a random pokemon 
