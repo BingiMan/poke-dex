@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script defer src="pokedex.js" charset="utf-8"></script>
+  <title>Savages Pokemons Everywhere!!!</title>
+</head>
+
+<body>
+  <header>
+    <nav id="main-menu">
+      <div>
+        <img id="nav-logo">
+      </div>
+      <div>
+        <a href="#">Pokemon</a>
+        <a href="#">Home</a>
+        <a href="#">PokeDex</a>
+        <a href="#">Twitch</a>
+        <a href="#">Forum</a>
+        <a href="#">News</a>
+      </div>
+    </nav>
+  </header>
+
+  <h1>PokeDex</h1>
+
+  <section>
+    <div>
+      <input type="text" id="pokemon-search" placeholder="Search your Pokemon" />
+      <button id="search-button"> Go! </button> <br>
+    </div>
+    <button id="random-search"> Random Poke poke </button>
+  </section>
+
+  <section>
+    <div id="pokemon-list"> </div>
+    <div id="random-list"></div>
+  </section>
+  <div id="display-list"></div>
+
+</body>
+
+</html>
