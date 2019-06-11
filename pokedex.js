@@ -77,5 +77,22 @@ randomSearch.addEventListener('click', async () => {
 })
 //DISPLAY LIST//
 
-const displayListPokemon = document.querySelector('#display-list');
+const gobalContainerList = document.querySelector('#display-list');
+
+let containerPokemonList = document.createElement('ul');
+
+let response = axios.get(searchBase);
+let pokeList = response.data;
+console.log(pokeList);
+for (let i = 1; i < pokeList; i++) {
+  let listDetails = document.createElement('li');
+  listDetails.innerHTML = pokeList.counts.results[i].name;
+  containerPokemonList.appendChild(listDetails)
+}
+gobalContainerList.appendChild(containerPokemonList);
+console.log(gobalContainerList);
+
+
+
+
 
