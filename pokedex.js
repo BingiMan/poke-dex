@@ -10,6 +10,7 @@ const inputPokemon = document.querySelector('#pokemon-search');
 buttonSearch.addEventListener('click', async () => {
   const inputValue = inputPokemon.value;
   let response = await axios.get(searchBase + inputValue);
+
   let poke = response.data;
 
   console.log(poke);
@@ -74,23 +75,33 @@ randomSearch.addEventListener('click', async () => {
 
   pokemonRandom.appendChild(pokemonItem);
   console.log(pokemonRandom);
+
 })
 //DISPLAY LIST//
+// let displayPokemonList = async function () {
+//   const gobalContainerList = document.querySelector('#display-list');
+//   let containerPokemonList = document.createElement('ul');
+//   let response = await axios.get(searchBase);
+//   let pokeList = response.result;
+//   console.log(pokeList);
+//   for (let i = 0; i < pokeList; i++) {
+//     let listDetails = document.createElement('li');
+//     listDetails.innerHTML = pokeList.results[i].name;
+//     containerPokemonList.appendChild(listDetails)
+//   }
+//   gobalContainerList.appendChild(containerPokemonList);
+//   console.log(gobalContainerList);
+// }
 
-const gobalContainerList = document.querySelector('#display-list');
 
-let containerPokemonList = document.createElement('ul');
+// let displayPokemonList = async function () {
+//   const gobalContainerList = document.querySelector('#display-list');
+//   let containerPokemonList = document.createElement('ul');
+//   let response = await axios.get(searchBase);
+//   let pokeList = response.result;
+//   console.log(pokeList);
 
-let response = axios.get(searchBase);
-let pokeList = response.data;
-console.log(pokeList);
-for (let i = 1; i < pokeList; i++) {
-  let listDetails = document.createElement('li');
-  listDetails.innerHTML = pokeList.counts.results[i].name;
-  containerPokemonList.appendChild(listDetails)
-}
-gobalContainerList.appendChild(containerPokemonList);
-console.log(gobalContainerList);
+// }
 
 
 
