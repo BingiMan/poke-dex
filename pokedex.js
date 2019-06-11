@@ -57,13 +57,13 @@ randomSearch.addEventListener('click', async () => {
   let pokemonName = document.createElement('p');
   let pokemonDetails = document.createElement('ul');
   let pokemonImg = document.createElement('img');
+
   pokemonName.innerHTML = `Name: ${ranPoke.name}`;
   for (let i = 0; i < ranPoke.abilities.length; i++) {
     let pokemonAbilities = document.createElement('li');
     pokemonAbilities.innerHTML = ranPoke.abilities[i].ability.name;
     pokemonDetails.appendChild(pokemonAbilities);
   };
-
 
   pokemonImg.setAttribute('src', ranPoke.sprites.front_default);
   pokemonImg.setAttribute('alt', ranPoke.name);
