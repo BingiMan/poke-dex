@@ -31,17 +31,28 @@
 
   <section>
     <div>
-      <input type="text" id="pokemon-search" placeholder="Search your Pokemon" />
-      <button id="search-button"> Go! </button> <br>
+      <div>
+        <input type="text" id="pokemon-search" placeholder="Search your Pokemon" />
+        <button id="search-button">
+          <div>
+            <span>
+              GO
+            </span>
+          </div>
+        </button> <br>
+      </div>
+      <button id="random-search"> Random Poke poke </button>
     </div>
-    <button id="random-search"> Random Poke poke </button>
 
     <div class="pokemon-details" data-active="0">
-      <div>
+      <div id="pokemon-img-container">
+
+      </div>
+      <div id="pokemon-name-container">
         <h2>Name: </h2> <span></span>
       </div>
-      <div>
-        <h2>Details</h2>
+      <div id="pokemon-details-container">
+        <h2>Abilities</h2>
         <ul>
 
         </ul>
