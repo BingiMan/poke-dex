@@ -1,24 +1,19 @@
+//ULR/////////////////////////////////////////////////
 const domain = 'https://pokeapi.co/api/v2';
 const search = '/pokemon/';
 const searchBase = `${domain}${search}`;
 const listLimit = '?offset=1&limit=800'
-//ULR/////////////////////////////////////////////////
 
-
-// Element Constants instances
+// ELEMENT CONSTANT INSTANCES ////////////////////////
 const buttonSearch = document.querySelector('#search-button');
 const randomSearch = document.querySelector('#random-search');
-
 const inputPokemon = document.querySelector('#pokemon-search');
-
 const gobalContainerList = document.querySelector('#display-list');
-// const pokemonSearched = document.querySelector('#pokemon-list')
-
 const pokemonDetailsContainer = document.querySelector('.pokemon-details');
 const pokemonNameElement = document.querySelector('#pokemon-name-container > span');
 const pokemonDetailListContainer = document.querySelector('#pokemon-details-container > ul');
 const pokemonImgContainer = document.querySelector('#pokemon-img-container');
-
+//CLEAR POKEMON DETAILS ///////////////////////////////
 function clearPokemonDetails() {
   pokemonImgContainer.innerHTML = '';
   pokemonNameElement.innerHTML = '';
@@ -30,7 +25,7 @@ function displayDetails(el) {
     el.setAttribute('data-active', '1');
   }
 }
-
+//RENDER POKEMON DETAILS///////////////////////////////
 let renderPokemonDetails = async (pokemonID) => {
   clearPokemonDetails();
 
@@ -42,9 +37,7 @@ let renderPokemonDetails = async (pokemonID) => {
 
   pokemonImg.setAttribute('src', poke.sprites.front_default);
   pokemonImg.setAttribute('alt', poke.name);
-
   pokemonImgContainer.appendChild(pokemonImg);
-
   pokemonNameElement.classList.add('bold-text');
   pokemonNameElement.innerHTML = poke.name;
 
@@ -57,13 +50,13 @@ let renderPokemonDetails = async (pokemonID) => {
   displayDetails(pokemonDetailsContainer);
 };
 
-//SEARCH BUTTON////////////////////////////////////////
+//SEARCH BUTTON/////////////////////////////////////////
 buttonSearch.addEventListener('click', async () => {
   const inputValue = inputPokemon.value;
   renderPokemonDetails(inputValue);
 });
 
-//RANDOM SEARCH BUTTON/////////////////////////////////////////
+//RANDOM SEARCH BUTTON///////////////////////////////////
 randomSearch.addEventListener('click', async () => {
   let randomPokemon = Math.floor(Math.random() * 807);
   const randomValue = randomPokemon;
