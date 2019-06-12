@@ -18,7 +18,6 @@ const pokemonDetailsContainer = document.querySelector('.pokemon-details');
 const pokemonNameElement = document.querySelector('#pokemon-name-container > span');
 const pokemonDetailListContainer = document.querySelector('#pokemon-details-container > ul');
 const pokemonImgContainer = document.querySelector('#pokemon-img-container');
-//SEARCH BUTTON////////////////////////////////////////
 
 function clearPokemonDetails() {
   pokemonImgContainer.innerHTML = '';
@@ -26,81 +25,50 @@ function clearPokemonDetails() {
   pokemonDetailListContainer.innerHTML = '';
 }
 
-function renderPokemonDetails() {
-  clearPokemonDetails();
-
-  let response = await axios.get(searchBase + inputValue);
-  let poke = response.data;
-  console.log(poke);
-
-  pokemonNameElement.classList.add('bold-text');
-
-  let pokemonImg = document.createElement('img');
-
-  pokemonNameElement.innerHTML = poke.name;
-
-  for (let i = 0; i < poke.abilities.length; i++) { // looping through abilities length
-    let pokemonAbilities = document.createElement('li'); // creating one 'li' per ability
-    pokemonAbilities.innerHTML = poke.abilities[i].ability.name; // creating the li with the name of the ability
-    pokemonDetailListContainer.appendChild(pokemonAbilities); // inserting the 'li' into the container 'lu'    
-  }
-  pokemonImg.setAttribute('src', poke.sprites.front_default);
-  pokemonImg.setAttribute('alt', poke.name);
-
-  pokemonImgContainer.appendChild(pokemonImg);
-
-  displayDetails(pokemonDetailsContainer);
-}
-buttonSearch.addEventListener('click', async () => {
-  const inputValue = inputPokemon.value;
-
-  renderPokemonDetails();
-});
-
-
 function displayDetails(el) {
-  console.log(el.getAttribute('data-active'))
   if (el.getAttribute('data-active') === '0') {
     el.setAttribute('data-active', '1');
   }
 }
 
-//RANDOM SEARCH BUTTON/////////////////////////////////////////
+let renderPokemonDetails = async (pokemonID) => {
+  clearPokemonDetails();
 
+  let response = await axios.get(searchBase + pokemonID);
+  let poke = response.data;
+  console.log(poke);
+
+  let pokemonImg = document.createElement('img');
+
+  pokemonImg.setAttribute('src', poke.sprites.front_default);
+  pokemonImg.setAttribute('alt', poke.name);
+
+  pokemonImgContainer.appendChild(pokemonImg);
+
+  pokemonNameElement.classList.add('bold-text');
+  pokemonNameElement.innerHTML = poke.name;
+
+  for (let i = 0; i < poke.abilities.length; i++) { // looping through abilities length
+    let pokemonAbilities = document.createElement('li'); // creating one 'li' per ability
+    pokemonAbilities.innerHTML = poke.abilities[i].ability.name; // creating the li with the name of the ability
+    pokemonDetailListContainer.appendChild(pokemonAbilities); // inserting the 'li' into the container 'lu'
+  }
+
+  displayDetails(pokemonDetailsContainer);
+};
+
+//SEARCH BUTTON////////////////////////////////////////
+buttonSearch.addEventListener('click', async () => {
+  const inputValue = inputPokemon.value;
+  renderPokemonDetails(inputValue);
+});
+
+//RANDOM SEARCH BUTTON/////////////////////////////////////////
 randomSearch.addEventListener('click', async () => {
   let randomPokemon = Math.floor(Math.random() * 807);
   const randomValue = randomPokemon;
-  console.log(randomValue);
-  let response = await axios.get(searchBase + randomValue);
-  let ranPoke = response.data;
 
-  console.log(ranPoke);
-
-  const pokemonRandom = document.querySelector('#random-list');
-  pokemonRandom.innerHTML = '';
-
-  let pokemonItem = document.createElement('div');
-  let pokemonName = document.createElement('p');
-  let pokemonDetails = document.createElement('ul');
-  let pokemonImg = document.createElement('img');
-
-  pokemonName.innerHTML = `Name: ${ranPoke.name}`;
-  for (let i = 0; i < ranPoke.abilities.length; i++) {
-    let pokemonAbilities = document.createElement('li');
-    pokemonAbilities.innerHTML = ranPoke.abilities[i].ability.name;
-    pokemonDetails.appendChild(pokemonAbilities);
-  };
-
-  pokemonImg.setAttribute('src', ranPoke.sprites.front_default);
-  pokemonImg.setAttribute('alt', ranPoke.name);
-
-  pokemonItem.appendChild(pokemonImg);
-  pokemonItem.appendChild(pokemonName);
-  pokemonItem.appendChild(pokemonDetails);
-
-  pokemonRandom.appendChild(pokemonItem);
-  console.log(pokemonRandom);
-
+  renderPokemonDetails(randomValue);
 });
 
 ////DISPLAY LIST/////////////////////////////////////////
@@ -121,7 +89,3 @@ let displayPokemonList = async () => {
 }
 
 displayPokemonList();
-
-
-
-
