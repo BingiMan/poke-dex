@@ -1,12 +1,21 @@
 body {
+  font-family: 'Bree Serif', serif;
+  background: #00416A;
+  background: -webkit-linear-gradient(to right, #FFE000, #799F0C, #00416A);  
+  background: linear-gradient(to right, #FFE000, #799F0C, #00416A); 
+  background: linear-gradient(to right, #24FE41, #FDFC47);
   margin: 0;
 }
+header{
+  height: 50px;
+}
+
 #main-menu {
   text-align: center;
   display: flex;
   background-color:rgba(45, 45, 45, 0.98);  /*#9da1a4*/
   color: white; 
-
+  height: 55px;
 }
 a{
   font-size: 18px;
@@ -20,11 +29,13 @@ color: #9da1a4;
 }
 .pokemon-logo {
   margin-left: 10px;
-  width: 100px;
+  margin-top: 5px;
+  width: 120px;
   height: 40px;
   background-image: url(img/pokemonLogo.png);
   background-size: contain;
-  background-repeat: no-repeat;
+  background-position: center;
+  background-repeat: no-repeat
 }
 .list-container {
   margin: auto;
@@ -33,11 +44,23 @@ color: #9da1a4;
 .list-container > a {
   margin: 20px;
 }
-h1{
+.pokedex-details{
   margin: 100px;
+  text-shadow: 2px 2px 14px white, 3px 3px 24px black;
+}
+.pokedex-details > h1 {
+  font-size: 44px;
+}
+.pokedex-details > p {
+  font-size: 20px;
 }
 
 #display-list > ul{
+   
+  background: -webkit-linear-gradient(to right, #434343, #2b9db9);
+  background: linear-gradient(to right, #434343, #2b9db9);
+  color: #fff;
+  margin-top: 50px;
   column-count: 3;
   overflow-y: scroll;
   height: 400px;
@@ -47,6 +70,14 @@ h1{
   font-size: 23px;
   border-radius: 16px;
 }
+#display-list > span {
+  text-align: center;
+  display: block;
+  padding-top: 150px;
+  font-size: 44px;
+  text-shadow: 2px 2px 14px white, 3px 3px 24px black;
+}
+
 
 /*////////*/
 .capitalize, #pokemon-details-container > ul > li, #console-message {
