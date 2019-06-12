@@ -1,0 +1,11 @@
+.bold-text {
+  font-weight: bold;
+}
+
+div[data-active="0"].pokemon-details{
+  display: none;
+}
+
+div[data-active="1"].pokemon-details{
+  display: block;
+}

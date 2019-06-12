@@ -1,12 +1,14 @@
 const domain = 'https://pokeapi.co/api/v2';
 const search = '/pokemon/';
-//ULR//
+//ULR/////////////////////////////////////////////////
+
 const searchBase = `${domain}${search}`;
-console.log(searchBase);
+const listLimit = '?offset=1&limit=800'
 const buttonSearch = document.querySelector('#search-button');
 const inputPokemon = document.querySelector('#pokemon-search');
 
-//SEARCH BUTTON//
+//SEARCH BUTTON////////////////////////////////////////
+
 buttonSearch.addEventListener('click', async () => {
   const inputValue = inputPokemon.value;
   let response = await axios.get(searchBase + inputValue);
@@ -19,6 +21,8 @@ buttonSearch.addEventListener('click', async () => {
   pokemonSearched.innerHTML = '';
   let pokemonItem = document.createElement('div');
   let pokemonName = document.createElement('p');
+  pokemonName.classList.add('bold-text');
+
   let pokemonDetails = document.createElement('ul');
   let pokemonImg = document.createElement('img');
 
@@ -39,7 +43,9 @@ buttonSearch.addEventListener('click', async () => {
   pokemonSearched.appendChild(pokemonItem);
   console.log(pokemonSearched);
 });
-//RANDOM SEARCH BUTTON//
+
+
+//RANDOM SEARCH BUTTON/////////////////////////////////////////
 const randomSearch = document.querySelector('#random-search');
 
 randomSearch.addEventListener('click', async () => {
@@ -76,33 +82,37 @@ randomSearch.addEventListener('click', async () => {
   pokemonRandom.appendChild(pokemonItem);
   console.log(pokemonRandom);
 
-})
-//DISPLAY LIST//
-// let displayPokemonList = async function () {
-//   const gobalContainerList = document.querySelector('#display-list');
+});
+
+////DISPLAY LIST/////////////////////////////////////////
+const gobalContainerList = document.querySelector('#display-list');
+
+let displayPokemonList = async () => {
+  let containerPokemonList = document.createElement('ul');
+  let response = await axios.get(searchBase + listLimit);
+  console.log(response);
+  let pokeList = response.data.results;
+  console.log(pokeList);
+  for (let i = 0; i < pokeList.length; i++) {
+    let listDetails = document.createElement('li');
+    listDetails.innerHTML = pokeList[i].name;
+    containerPokemonList.appendChild(listDetails)
+  }
+  gobalContainerList.appendChild(containerPokemonList);
+  console.log(gobalContainerList);
+}
+
+displayPokemonList();
+
+// const gobalContainerList = document.querySelector('#display-list');
+
+// let displayPokeList = async () => {
+//   let listedPokemon
 //   let containerPokemonList = document.createElement('ul');
 //   let response = await axios.get(searchBase);
-//   let pokeList = response.result;
-//   console.log(pokeList);
-//   for (let i = 0; i < pokeList; i++) {
-//     let listDetails = document.createElement('li');
-//     listDetails.innerHTML = pokeList.results[i].name;
-//     containerPokemonList.appendChild(listDetails)
-//   }
-//   gobalContainerList.appendChild(containerPokemonList);
-//   console.log(gobalContainerList);
+//   let listedPokemon = response.data;
 // }
-
-
-// let displayPokemonList = async function () {
-//   const gobalContainerList = document.querySelector('#display-list');
-//   let containerPokemonList = document.createElement('ul');
-//   let response = await axios.get(searchBase);
-//   let pokeList = response.result;
-//   console.log(pokeList);
-
-// }
-
+// console.log(listedPokemon);
 
 
 
