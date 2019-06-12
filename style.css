@@ -22,7 +22,7 @@ color: #9da1a4;
   margin-left: 10px;
   width: 100px;
   height: 40px;
-  background-image: url(pokemonLogo.png);
+  background-image: url(img/pokemonLogo.png);
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -90,7 +90,7 @@ h1{
 .pokedex-bg {
   width: 800px;
   height: 600px;
-  background-image: url(pokedex.png);
+  background-image: url(img/pokedex.png);
   background-size: contain;
   background-repeat: no-repeat;
 }
