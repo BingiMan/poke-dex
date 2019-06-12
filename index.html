@@ -13,58 +13,60 @@
 <body>
   <header>
     <nav id="main-menu">
-      <div>
-        <img id="nav-logo">
+      <div class="pokemon-logo">
       </div>
-      <div>
-        <a href="#">Pokemon</a>
+      <div class="list-container">
         <a href="#">Home</a>
         <a href="#">PokeDex</a>
-        <a href="#">Twitch</a>
-        <a href="#">Forum</a>
-        <a href="#">News</a>
+        <a href="https://www.twitch.tv/directory/game/Pok%C3%A9mon%20HeartGold%2FSoulSilver">Twitch</a>
+        <a href="https://www.pokecommunity.com/">Forum</a>
+        <a href="http://www.nintendolife.com/pokemon/news">News</a>
       </div>
     </nav>
   </header>
 
   <h1>PokeDex</h1>
 
-  <section>
-    <div>
-      <div>
-        <input type="text" id="pokemon-search" placeholder="Search your Pokemon" />
-        <button id="search-button">
+  <section class="main-pokedex-container">
+    <div class="pokedex-bg">
+      <div class="pokedex-wrapper">
+        <div class="user-input-box">
           <div>
-            <span>
-              GO
-            </span>
+            <input type="text" id="pokemon-search" placeholder="Search your Pokemon" />
+            <button id="search-button">
+              <span>
+                Search
+              </span>
+            </button>
+            <br>
           </div>
-        </button>
-        <br>
-      </div>
-      <button id="random-search"> Random Poke poke</button>
-    </div>
+          <button id="random-search">Display Random Pokemon</button>
+        </div>
 
-    <div class="pokemon-details" data-active="0">
-      <div id="pokemon-img-container">
+        <div id="console-message" data-active="0">
+        </div>
 
-      </div>
-      <div id="pokemon-name-container">
-        <h2>Name: </h2> <span></span>
-      </div>
-      <div id="pokemon-details-container">
-        <h2>Abilities</h2>
-        <ul>
+        <div class="pokemon-details" data-active="0">
+          <div id="pokemon-img-container">
 
-        </ul>
+          </div>
+          <div class="pokemon-details-body">
+            <div id="pokemon-name-container">
+              <h3>Name</h3> <span></span>
+            </div>
+            <div id="pokemon-details-container">
+              <h3>Abilities</h3>
+              <ul>
+
+              </ul>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <section>
-    <div id="pokemon-list"></div>
-    <div id="random-list"></div>
-  </section>
   <div id="display-list"></div>
 
 

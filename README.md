@@ -18,7 +18,7 @@ When the website is complete we should be able to:
 --------------------------------
 TASK
 --------------------------------
-* Search button // working on it
-* Random search // working on it
-* List display // needs to get done after.
+* Search button // DONE
+* Random search // DONE
+* List display // WORKING ON IT
 * css 

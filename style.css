@@ -1,11 +1,159 @@
-.bold-text {
-  font-weight: bold;
+body {
+  margin: 0;
+}
+#main-menu {
+  text-align: center;
+  display: flex;
+  background-color:rgba(45, 45, 45, 0.98);  /*#9da1a4*/
+  color: white; 
+
+}
+a{
+  font-size: 18px;
+  text-decoration: none;
+}
+a:hover {
+color: #9da1a4;
+}
+a:visited{
+color: #9da1a4;
+}
+.pokemon-logo {
+  margin-left: 10px;
+  width: 100px;
+  height: 40px;
+  background-image: url(pokemonLogo.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.list-container {
+  margin: auto;
+  color: #fff;
+}
+.list-container > a {
+  margin: 20px;
+}
+h1{
+  margin: 100px;
 }
 
-div[data-active="0"].pokemon-details{
+#display-list > ul{
+  column-count: 3;
+  overflow-y: scroll;
+  height: 400px;
+  padding: 42px;
+  list-style: decimal;
+  border: 2px solid #9da1a4;
+  font-size: 23px;
+  border-radius: 16px;
+}
+
+/*////////*/
+.capitalize, #pokemon-details-container > ul > li, #console-message {
+  text-transform: capitalize;
+}
+
+#console-message {
+  text-align: center;
+  color: #fff;
+  margin-top: 4px;
+}
+
+#pokemon-search, #search-button, #random-search {
+  background: rgba(255, 255, 255, .5);
+  border: none;
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-size: 14px;
+  display: block;
+}
+
+#search-button, #random-search {
+  width: 195px;
+  margin: auto;
+  margin-top: 16px;
+}
+
+#search-button:hover {
+  cursor: pointer;
+}
+
+.pokemon-img {
+  height: 92px;
+  width: 92px;
+}
+
+.pokemon-details {
+  width: 230px;
+}
+
+.pokedex-bg {
+  width: 800px;
+  height: 600px;
+  background-image: url(pokedex.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.pokemon-details-body > div {
+  flex: 1;
+}
+
+#pokemon-details-container > ul {
+  padding-left: 0;
+}
+
+h3, ul {
+  padding: 0;
+  margin: 0;
+}
+
+h3 {
+  padding-bottom: 6px;
+}
+
+#pokemon-details-container > ul > li {
+  display: inline-block;
+}
+
+.pokedex-bg, .pokemon-details-body, #pokemon-img-container,
+.main-pokedex-container {
+  display: flex;
+}
+
+
+.pokedex-wrapper, #pokemon-img-container > img {
+  margin: 0 auto;
+}
+
+.user-input-box {
+  margin-top: 70px;
+}
+
+.user-input-box, .user-input-box > div, #pokemon-search {
+  width: inherit;
+}
+
+#pokemon-search, .pokedex-bg {
+  margin: auto;
+}
+
+.pokemon-details {
+  margin-top: 150px;
+}
+
+div[data-active="0"].pokemon-details {
   display: none;
 }
 
-div[data-active="1"].pokemon-details{
+div[data-active="1"].pokemon-details {
+  display: block;
+}
+
+div#console-message[data-active="0"] {
+  display: none;
+}
+
+div#console-message[data-active="1"] {
   display: block;
 }
