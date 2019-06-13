@@ -85,7 +85,7 @@ let renderPokemonDetails = (pokemonID) => {
 //SEARCH BUTTON///////////////////////////////////////////////
 buttonSearch.addEventListener('click', () => {
   if (!buttonsDisabled) {
-    const inputValue = inputPokemon.value;
+    const inputValue = inputPokemon.value.toLowerCase();
     if (inputValue !== '') {
       renderPokemonDetails(inputValue);
       buttonsDisabled = true;
