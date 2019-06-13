@@ -54,6 +54,7 @@ color: #9da1a4;
   background-color: rgba(45, 45, 45, 0.98);
   color: white;
   padding-left: 13px;
+  
 }
 .pokedex-details, .give-a-try > h1 {
   font-family: 'Bree Serif', serif;
@@ -63,12 +64,10 @@ color: #9da1a4;
   font-size: 20px;
 }
 
-
-
 #display-list > ul{
    
-  background: -webkit-linear-gradient(to right, #434343, #2b9db9);
-  background: linear-gradient(to right, #434343, #2b9db9);
+  background: -webkit-linear-gradient(to right, #da2b2b, #434343);
+  background: linear-gradient(to right, #da2b2b, #434343);
   color: #fff;
   margin-top: 50px;
   column-count: 3;
@@ -91,8 +90,15 @@ color: #9da1a4;
   color: white;
   padding-left: 13px;
 }
-
-
+.pokemon-icon {
+  background-image: url(img/pikachu-jump.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 400px;
+  width: 400px;
+  margin-left: 750px;
+  position: fixed;
+}
 /*////////*/
 .capitalize, #pokemon-details-container > ul > li, #console-message {
   text-transform: capitalize;
