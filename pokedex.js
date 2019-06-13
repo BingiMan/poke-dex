@@ -129,4 +129,3 @@ let displayPokemonList = async () => {
 
 displayPokemonList();
 
-////GIFT ANIMATION///////

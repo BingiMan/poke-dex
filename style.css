@@ -17,15 +17,16 @@ header{
   text-align: center;
   display: flex;
   background-color:rgba(45, 45, 45, 0.98);  /*#9da1a4*/
-  color: white; 
+  color: #9da1a4; 
   height: 55px;
+  text-decoration: none;
 }
 a{
   font-size: 18px;
   text-decoration: none;
 }
-a:hover {
-color: #9da1a4;
+.list-container > a:hover {
+color: white;
 }
 a:visited{
 color: #9da1a4;
