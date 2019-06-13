@@ -213,3 +213,22 @@ div#console-message[data-active="0"] {
 div#console-message[data-active="1"] {
   display: block;
 }
+@media only screen
+  and (max-width: 414px){
+    .list-container > a{
+      margin: 9px;
+      font-size: 13px;
+    }
+    .pokemon-logo{
+      margin-left: 6px;
+    margin-top: 5px;
+    width: 67px;
+    height: 46px;
+    }
+    .pokemon-icon {
+      height: 100px;
+      width: 100px;
+      margin-left: 2px
+    }
+    
+  }
