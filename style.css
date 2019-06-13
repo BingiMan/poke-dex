@@ -27,9 +27,11 @@ a{
 }
 .list-container > a:hover {
 color: white;
+text-decoration: none;
 }
 a:visited{
 color: #9da1a4;
+text-decoration: none;
 }
 .pokemon-logo {
   margin-left: 10px;
@@ -44,9 +46,11 @@ color: #9da1a4;
 .list-container {
   margin: auto;
   color: #fff;
+  text-decoration: none;
 }
 .list-container > a {
   margin: 20px;
+  text-decoration: none;
 }
 .pokedex-details, .give-a-try{
   margin: 100px;
