@@ -229,7 +229,67 @@ div#console-message[data-active="1"] {
     .pokemon-icon {
       height: 100px;
       width: 100px;
-      margin-left: 2px
+      margin-left: 224px
+    }
+    .pokedex-details, .give-a-try, #display-list {
+      font-size: 12px;
+      margin: 70px 20px 30px 20px;
+    }
+    .pokedex-details,.give-a-try > h1 {
+      font-size: 20px;
+    }
+    .pokedex-details, .give-a-try > p {
+      font-size: 12px;
+    }
+    #pokemon-search{
+      font-size: 9px;
+      margin-top: -42px;
     }
     
-  }
+    #search-button{
+      font-size: 9px;
+      width: 100px;
+      border-radius: 40px;
+    }
+    
+    #random-search{
+      font-size: 9px;
+    margin-top: -20px;
+    width: 142px;
+    margin-right: 7px;
+    border-radius: 40px;
+    margin: auto;
+    }
+    .pokemon-details{
+      margin: 46px 100px 20px 120px;
+    font-size: 8px;
+    width: 119px;
+    height: 100px;
+    }
+    #pokemon-img-container {
+      width: 76px;
+    height: 65px;
+    margin-top: 20px;
+    }
+    #pokemon-img-container > img {
+      height: 80px;
+      width: 80px;
+  
+    }
+    .mobile-input-box{
+      height: 71px;
+    }
+    #console-message {
+      margin-top: 100px;
+      color: black;
+      font-size: 14px;
+    }
+    #display-list > ul{
+    font-size: 18px;
+    padding: 0 0 0 29px;
+    }
+    #display-list > span {
+      font-size: 22px;
+    }
+}
+    
